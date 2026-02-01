@@ -813,30 +813,38 @@ a[href="attackontitanproject.html"] .card-body p {
 }
 
 
-/* ================= MOBILE FIX PACK ================= */
-/* ================= MOBILE VIDEO FIX ================= */
 @media (max-width: 768px) {
 
-    /* Grille en une colonne */
-    .videos-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        flex-direction: column;
+        background-color: #141414;
+        text-align: center;
+        padding: 30px 0;
+        gap: 25px;
+        border-top: 1px solid #333;
+        transition: left 0.3s ease;
+        z-index: 999;
     }
 
-    /* On enlève tous les effets desktop qui cassent le layout */
-    .video-wrapper {
-        transform: none !important;
-        margin-top: 0 !important;
-        border-radius: 10px;
+    .nav-menu.active {
+        left: 0;
     }
 
-    /* IMPORTANT : on supprime les hauteurs fixes */
-    .video-wrapper,
-    .video-large,
-    .video-medium,
-    .video-small {
-        height: auto !important;
-        aspect-ratio: 16 / 9;
-        max-height: 190px; /* 🔥 Taille idéale mobile */
+    .nav-link {
+        font-size: 16px;
+        letter-spacing: 3px;
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu a {
+        white-space: normal;
     }
 }
