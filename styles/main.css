@@ -586,21 +586,6 @@ body {
     transform: translateY(0);
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .videos-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .video-large,
-    .video-medium,
-    .video-small {
-        height: 250px !important;
-        transform: none !important;
-        margin-top: 0 !important;
-    }
-}
 
 /* Contact Section */
 .contact {
@@ -829,97 +814,29 @@ a[href="attackontitanproject.html"] .card-body p {
 
 
 /* ================= MOBILE FIX PACK ================= */
+/* ================= MOBILE VIDEO FIX ================= */
 @media (max-width: 768px) {
 
-    /* GENERAL SPACING */
-    section {
-        padding: 60px 0 !important;
-    }
-
-    .container {
-        padding: 0 18px;
-    }
-
-    /* NAVBAR FIX */
-    .nav-menu {
-        background-color: #141414 !important; /* dark comme le site */
-        border-top: 1px solid #333;
-    }
-
-    .nav-link {
-        font-size: 14px;
-        letter-spacing: 2px;
-    }
-
-    /* HERO FIX */
-    .hero {
-        padding-top: 120px;
-    }
-
-    .hero-image img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .hero-title {
-        font-size: 18px;
-        letter-spacing: 4px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-        padding: 0 10px;
-    }
-
-    /* ABOUT FIX */
-    .about-profile {
-        gap: 25px;
-    }
-
-    .about-text p {
-        font-size: 14px;
-    }
-
-    /* SECTION HEADERS */
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .section-header h2 {
-        font-size: 14px;
-        letter-spacing: 2px;
-    }
-
-    /* VIDEOS FIX */
+    /* Grille en une colonne */
     .videos-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 14px;
     }
 
+    /* On enlève tous les effets desktop qui cassent le layout */
+    .video-wrapper {
+        transform: none !important;
+        margin-top: 0 !important;
+        border-radius: 10px;
+    }
+
+    /* IMPORTANT : on supprime les hauteurs fixes */
     .video-wrapper,
     .video-large,
     .video-medium,
     .video-small {
-        transform: none !important;
-        margin-top: 0 !important;
         height: auto !important;
         aspect-ratio: 16 / 9;
-    }
-
-    /* CONTACT FIX */
-    .contact p {
-        font-size: 14px;
-        padding: 0 10px;
-    }
-
-    .contact-links {
-        gap: 18px;
-    }
-
-    /* FOOTER */
-    .footer-links {
-        gap: 12px;
+        max-height: 190px; /* 🔥 Taille idéale mobile */
     }
 }
